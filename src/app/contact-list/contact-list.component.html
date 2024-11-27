@@ -1,0 +1,49 @@
+<div>
+  <h3>
+    {{ selectedContact ? "Редактировать контакт" : "Создать новый контакт" }}
+  </h3>
+  <form (ngSubmit)="onSubmit()" #contactForm="ngForm">
+    <div class="form-group">
+      <label for="name">Имя</label>
+      <input
+        type="text"
+        [(ngModel)]="contact.name"
+        name="name"
+        class="form-control"
+        required
+      />
+    </div>
+    <div class="form-group">
+      <label for="email">Email</label>
+      <input
+        type="email"
+        [(ngModel)]="contact.email"
+        name="email"
+        class="form-control"
+        required
+      />
+    </div>
+    <div class="form-group">
+      <label for="mobile">Мобильный телефон</label>
+      <input
+        type="text"
+        [(ngModel)]="contact.phone.mobile"
+        name="mobile"
+        class="form-control"
+        required
+      />
+    </div>
+    <div class="form-group">
+      <label for="work">Рабочий телефон</label>
+      <input
+        type="text"
+        [(ngModel)]="contact.phone.work"
+        name="work"
+        class="form-control"
+      />
+    </div>
+    <button type="submit" class="btn btn-primary">
+      {{ selectedContact ? "Обновить контакт" : "Создать контакт" }}
+    </button>
+  </form>
+</div>
